@@ -18,38 +18,14 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update \
   && apt-get dist-upgrade -y \
   && apt-get install -y \
-#    autoconf \
-#    build-essential \
     bzip2 \
     ca-certificates-java \
     curl \
-#    gcc \
-#    git \
-#    groff \
-#    lib32stdc++6 \
-#    lib32z1 \
-#    lib32z1-dev \
-#    lib32ncurses5 \
-#    lib32bz2-1.0 \
-#    libc6-dev \
-#    libgmp-dev \
-#    libmpc-dev \
-#    libmpfr-dev \
-#    libxslt-dev \
-#    libxml2-dev \
-#    m4 \
-#    make \
-#    ncurses-dev \
-#    ocaml \
-#    openssh-client \
     pkg-config \
-#    python-software-properties \
-#    rsync \
     software-properties-common \
     unzip \
     wget \
     zip \
-#    zlib1g-dev \
     --no-install-recommends \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
@@ -64,14 +40,10 @@ RUN apt-add-repository ppa:openjdk-r/ppa \
 # Environment variables
 ENV ANDROID_HOME /usr/local/android-sdk
 ENV ANDROID_SDK_HOME $ANDROID_HOME
-#ENV ANDROID_NDK_HOME /usr/local/android-ndk
 ENV JENKINS_HOME $HOME
 ENV PATH ${INFER_HOME}/bin:${PATH}
 ENV PATH $PATH:$ANDROID_SDK_HOME/tools
 ENV PATH $PATH:$ANDROID_SDK_HOME/platform-tools
-#ENV PATH $PATH:$ANDROID_SDK_HOME/build-tools/23.0.2
-#ENV PATH $PATH:$ANDROID_SDK_HOME/build-tools/24.0.0
-#ENV PATH $PATH:$ANDROID_NDK_HOME
 
 # Export JAVA_HOME variable
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
